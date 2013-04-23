@@ -43,20 +43,7 @@ body {
 </style>
 <section id="page">
 
-	<hgroup>
-		<h1>Home Page</h1>
-		<h5>
-			Olá,
-			<c:out value="${USERNAME}" />
-		</h5>
-	</hgroup>
-	<nav class="clear">
-		<ul>
-			<li><a href="changePassword.html">Alterar Senha</a></li>
-			<li><a href="userProfile.html">Editar Perfil</a></li>
-			<li><a href="logout.html">Sair</a></li>
-		</ul>
-	</nav>
+	<%@ include file="header.jsp" %>
 </head>
 <body>
 	<div class="line"></div>

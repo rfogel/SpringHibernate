@@ -20,4 +20,9 @@ public class BusinessFactoryImpl extends BusinessFactory
 	public OrderBusiness getOrderBusiness() {
 		return new OrderBusinessImpl();
 	}
+
+	@Override
+	public LoginBusiness getLoginBusiness() {
+		return new LoginBusinessImpl();
+	}
 }

@@ -27,4 +27,9 @@ public class DaoFactoryImpl extends DaoFactory
 	public CommissionDao getCommissionDao() {
 		return (CommissionDao) SpringUtil.getBean("commissionDao");
 	}
+
+	@Override
+	public LoginDao getLoginDao() {
+		return (LoginDao) SpringUtil.getBean("loginDao");
+	}
 }

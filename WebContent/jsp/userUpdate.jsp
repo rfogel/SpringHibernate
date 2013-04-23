@@ -56,20 +56,7 @@ h4 {
 </style>
 <section id="page">
 
-	<hgroup>
-		<h1>Home Page</h1>
-		<h5>
-			Olá,
-			<c:out value="${USERNAME}" />
-		</h5>
-	</hgroup>
-	<nav class="clear">
-		<ul>
-			<li><a href="changePassword.html">Alterar Senha</a></li>
-			<li><a href="userProfile.html">Editar Perfil</a></li>
-			<li><a href="logout.html">Sair</a></li>
-		</ul>
-	</nav>
+	<%@ include file="header.jsp" %>
 </head>
 
 <body>
@@ -89,7 +76,7 @@ h4 {
 					</tr>
 				</table>
 			</c:if>
-			<input type="hidden" name="id_login" value="${param.id}" />
+			<form:input type="hidden" path="loginId" />
 			<table>
 				<tr>
 					<td width="140">Usuário:</td>

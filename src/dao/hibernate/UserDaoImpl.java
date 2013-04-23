@@ -35,6 +35,7 @@ public class UserDaoImpl extends Dao implements UserDao
 		{
 			session = getSessionFactory().openSession();
 			saveOrUpdate(user);
+			session.close();
 			
 		} catch (HibernateException e) {
 			session.close();
@@ -51,6 +52,7 @@ public class UserDaoImpl extends Dao implements UserDao
 		{
 			session = getSessionFactory().openSession();
 			delete(user);
+			session.close();
 			
 		} catch (HibernateException e) {
 			session.close();

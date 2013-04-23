@@ -115,8 +115,7 @@
 				<table>
 					<tr>
 						<td width="25"><img src="Imagens/adicionar.png"></td>
-						<td><a href="userUpdate.html?comando=inserir">Inserir
-								novo professor </a></td>
+						<td><a href="userUpdate.html?comando=inserir">Inserir novo professor</a></td>
 					</tr>
 				</table>
 			</div>

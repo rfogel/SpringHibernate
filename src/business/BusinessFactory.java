@@ -24,4 +24,5 @@ public abstract class BusinessFactory {
 
 	public abstract UserBusiness getUserBusiness();
 	public abstract OrderBusiness getOrderBusiness();
+	public abstract LoginBusiness getLoginBusiness();
 }

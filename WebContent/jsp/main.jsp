@@ -1,4 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <c:choose>
 	<c:when test="${sessionScope.username == null}">
@@ -39,21 +41,8 @@
 	<section id="page">
 
 		<header>
-
-			<hgroup>
-				<h1>Home Page</h1>
-				<h5>
-					Olá,
-					<c:out value="${USERNAME}" />
-				</h5>
-			</hgroup>
-			<nav class="clear">
-				<ul>
-					<li><a href="changePassword.html">Alterar Senha</a></li>
-					<li><a href="userProfile.html">Editar Perfil</a></li>
-					<li><a href="logout.html">Sair</a></li>
-				</ul>
-			</nav>
+			
+			<%@ include file="header.jsp" %>
 
 		</header>
 
@@ -64,23 +53,23 @@
 			<table style="float: right">
 				<tr>
 					<td width="10" bgcolor="yellow"></td>
-					<td width="62">&nbsp;Pendente</td>
+					<td>&nbsp;<spring:message code="label.pending"/>&nbsp;</td>
 					<td width="10" bgcolor="green"></td>
-					<td width="85">&nbsp;Encaminhado</td>
+					<td>&nbsp;<spring:message code="label.forward"/>&nbsp;</td>
 					<td width="10" bgcolor="gray"></td>
-					<td width="85">&nbsp;Em Avaliação</td>
+					<td>&nbsp;<spring:message code="label.analazing"/>&nbsp;</td>
 					<td width="10" bgcolor="orange"></td>
-					<td width="55">&nbsp;Definido</td>
+					<td>&nbsp;<spring:message code="label.defined"/>&nbsp;</td>
 					<td width="10" bgcolor="red"></td>
-					<td width="60">&nbsp;Rejeitado</td>
+					<td>&nbsp;<spring:message code="label.rejected"/>&nbsp;</td>
 					<td width="10" bgcolor="blue"></td>
-					<td width="80">&nbsp;Aprovado</td>
+					<td>&nbsp;<spring:message code="label.aproved"/>&nbsp;</td>
 				</tr>
 			</table>
 			<br>
 
 			<article id="professor">
-				<h3>Professor</h3>
+				<h3><spring:message code="label.professor"/></h3>
 
 				<div class="line"></div>
 
@@ -168,7 +157,7 @@
 			<c:choose>
 				<c:when test="${sessionScope.usertypeId == 2}">
 					<article id="membro1">
-						<h3>1º Membro da Comissão de Mérito</h3>
+						<h3><spring:message code="label.firstmember"/></h3>
 
 						<div class="line"></div>
 
@@ -216,7 +205,7 @@
 				</c:when>
 				<c:when test="${sessionScope.usertypeId == 3}">
 					<article id="membro2">
-						<h3>2º Membro da Comissão de Mérito</h3>
+						<h3><spring:message code="label.secondmember"/></h3>
 
 						<div class="line"></div>
 
@@ -264,7 +253,7 @@
 				</c:when>
 				<c:when test="${sessionScope.usertypeId == 4}">
 					<article id="presidente">
-						<h3>Presidente da Comissão de Mérito</h3>
+						<h3><spring:message code="label.president"/></h3>
 
 						<div class="line"></div>
 

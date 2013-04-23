@@ -19,15 +19,15 @@ public class Login implements ModelPersistenty
 	private String username;
 	private String password;
 	private String newPassword;
-	private int loginId;
+	private Integer loginId;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public int getLoginId() {
+	public Integer getLoginId() {
 		return loginId;
 	}
 
-	public void setLoginId(int loginId) {
+	public void setLoginId(Integer loginId) {
 		this.loginId = loginId;
 	}
 

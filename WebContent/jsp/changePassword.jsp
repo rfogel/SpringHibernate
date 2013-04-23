@@ -58,20 +58,8 @@ h4 {
 
 <section id="page">
 
-	<hgroup>
-		<h1>Home Page</h1>
-		<h5>
-			Olá,
-			<c:out value="${USERNAME}" />
-		</h5>
-	</hgroup>
-	<nav class="clear">
-		<ul>
-			<li><a href="AlterarSenha.html">Alterar Senha</a></li>
-			<li><a href="Perfil.html">Editar Perfil</a></li>
-			<li><a href="Logout.html">Sair</a></li>
-		</ul>
-	</nav>
+	<%@ include file="header.jsp" %>
+	
 </head>
 
 <body>
@@ -107,7 +95,7 @@ h4 {
 	<footer>
 		<div class="line"></div>
 		<p>Copyright 2010 - Rafael Fogel</p>
-		<a href="TemplateForm.html" class="up">Inicio</a>
+		<a href="main.html" class="up">Inicio</a>
 	</footer>
 	</section>
 

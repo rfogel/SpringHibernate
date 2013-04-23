@@ -25,5 +25,6 @@ public abstract class DaoFactory
 	public abstract UserDao getUserDao();
 	public abstract OrderDao getOrderDao();
 	public abstract CommissionDao getCommissionDao();
+	public abstract LoginDao getLoginDao();
 
 }
