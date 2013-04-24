@@ -65,9 +65,7 @@ public class UserProfileController
 		{
 			userBus.updateUser(user);
 
-		}
-		catch (BusinessException e)
-		{
+		} catch (BusinessException e) {
 			System.out.println(e.getErrorMessage());
 		}
 
@@ -94,9 +92,8 @@ public class UserProfileController
 		try
 		{
 			lisRoles = userBus.getRole();
-		}
-		catch (BusinessException e)
-		{
+		
+		} catch (BusinessException e) {
 			System.out.println(e.getErrorMessage());
 		}
 

@@ -19,8 +19,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-
 /**
  *
  * @author Fogel
@@ -68,7 +66,6 @@ public class User implements ModelPersistenty
 	}
 
 	@OneToOne(cascade=CascadeType.ALL)
-	@Cascade( {org.hibernate.annotations.CascadeType.DELETE} )
 	@JoinColumn(name="loginId")
 	public Login getLogin() {
 		return login;
