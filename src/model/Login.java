@@ -53,4 +53,5 @@ public class Login implements ModelPersistenty
 	public void setNewPassword(String newPassword) {
 		this.newPassword = newPassword;
 	}
+
 }

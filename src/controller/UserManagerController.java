@@ -38,16 +38,16 @@ import exception.BusinessException;
 public class UserManagerController 
 {
 	private static List<User> users;
-	
+
 	public static User getUser(Integer userId) 
 	{ 
 		for ( User u : users )
 			if ( u.getUserId().equals(userId) )
 				return u;
-		
+
 		return null;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@ModelAttribute("login") Login log, HttpServletRequest request) throws Exception
 	{
@@ -59,16 +59,17 @@ public class UserManagerController
 			try
 			{
 				String loginId = request.getParameter("loginId");
-				
+
 				List<Order> orders = orderBus.getOrderByUser(Integer.parseInt(loginId));
-				
+
 				if ( orders != null && !orders.isEmpty() )
 					return "redirect:userManager.html?status=erro&mensagem=O usuário possui pedidos no sistema e não é possível excluir-lo!";
 
-				userBus.deleteUserById(Integer.parseInt(loginId));
-			}
-			catch (BusinessException e)
-			{
+				User user = getUser(Integer.parseInt(loginId));
+				
+				userBus.deleteUser(user);
+
+			} catch (BusinessException e) {
 				System.out.println(e.getErrorMessage());
 			}
 
@@ -83,7 +84,7 @@ public class UserManagerController
 		users = null;
 
 		UserBusiness userBus = BusinessFactory.Instance(BusinessFactoryImpl.class).getUserBusiness();
-		
+
 		try
 		{
 			users = userBus.getUser();
