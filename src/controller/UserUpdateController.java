@@ -19,6 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.util.WebUtils;
 
@@ -118,10 +119,8 @@ public class UserUpdateController
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String showUserForm (ModelMap model, HttpServletRequest request)
+	public String showUserForm (ModelMap model, HttpServletRequest request, @RequestParam(value="userId",required=false) String userId)
 	{		
-		String userId = request.getParameter("userId");
-
 		if ( userId == null ) 
 		{
 			Login login = new Login();
